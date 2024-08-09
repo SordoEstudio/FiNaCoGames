@@ -1,0 +1,52 @@
+[
+    {
+        "question": "¿Cuál es el planeta más grande del sistema solar?",
+        "options": ["Marte", "Venus", "Júpiter", "Saturno"],
+        "answer": "Júpiter"
+    },
+    {
+        "question": "¿Quién escribió 'Cien años de soledad'?",
+        "options": ["Gabriel García Márquez", "Pablo Neruda", "Mario Vargas Llosa", "Jorge Luis Borges"],
+        "answer": "Gabriel García Márquez"
+    },
+    {
+        "question": "¿Cuál es el elemento químico con el símbolo 'O'?",
+        "options": ["Oro", "Osmio", "Oxígeno", "Ozono"],
+        "answer": "Oxígeno"
+    },
+    {
+        "question": "¿En qué año llegó el hombre a la Luna?",
+        "options": ["1965", "1969", "1972", "1975"],
+        "answer": "1969"
+    },
+    {
+        "question": "¿Cuál es el país más grande del mundo por superficie?",
+        "options": ["Estados Unidos", "China", "Rusia", "Canadá"],
+        "answer": "Rusia"
+    },
+    {
+        "question": "¿Qué instrumento musical tiene cuerdas y se toca con un arco?",
+        "options": ["Guitarra", "Violín", "Flauta", "Piano"],
+        "answer": "Violín"
+    },
+    {
+        "question": "¿Cuál es la capital de Japón?",
+        "options": ["Seúl", "Pekín", "Tokio", "Kioto"],
+        "answer": "Tokio"
+    },
+    {
+        "question": "¿Cuál es el océano más grande de la Tierra?",
+        "options": ["Atlántico", "Índico", "Ártico", "Pacífico"],
+        "answer": "Pacífico"
+    },
+    {
+        "question": "¿Quién pintó la Mona Lisa?",
+        "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+        "answer": "Leonardo da Vinci"
+    },
+    {
+        "question": "¿En qué continente se encuentra el desierto del Sahara?",
+        "options": ["Asia", "África", "Australia", "América del Sur"],
+        "answer": "África"
+    }
+]
