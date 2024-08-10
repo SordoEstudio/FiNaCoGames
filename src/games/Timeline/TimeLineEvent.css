@@ -1,0 +1,32 @@
+.timeline-event {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .timeline-date {
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  .timeline-content {
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    max-width: 400px;
+  }
+  
+  .timeline-event::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border: 4px solid #ddd;
+    border-radius: 50%;
+  }
+  

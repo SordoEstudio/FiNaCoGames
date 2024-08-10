@@ -1,9 +1,20 @@
-import React from 'react'
+// src/pages/Results.js
+import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Results = () => {
-  return (
-    <div>Results</div>
-  )
-}
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { score, time } = location.state || { score: 0, time: '00:00:00' };
 
-export default Results
+  return (
+    <div>
+      <h1>¡Felicitaciones!</h1>
+      <p>Lograste un puntaje de: {score}</p>
+      <p>Tiempo: {time}</p>
+      <button onClick={() => navigate('/')}>Volver a Inicio</button>
+    </div>
+  );
+};
+
+export default Results;

@@ -1,14 +1,12 @@
+import { Router } from 'react-router-dom'
 import './App.css'
-import Layout from './pages/layout/Layout'
-import AppRouter from './pages/routes/AppRouter'
+import AppRouter from './routes/AppRouter'
 
 function App() {
 
   return (
     <>
-<Layout>
   <AppRouter />
-</Layout>
     </>
   )
 }
