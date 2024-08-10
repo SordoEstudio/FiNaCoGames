@@ -1,16 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Questions from './Questions'
+import Layout from './pages/layout/Layout'
+import AppRouter from './pages/routes/AppRouter'
 
 function App() {
 
   return (
     <>
-    <div className='divprincipal'>
-<Questions />
-    </div>
+<Layout>
+  <AppRouter />
+</Layout>
     </>
   )
 }

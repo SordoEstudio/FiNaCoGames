@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import questions from "./assets/questions.json";
+import questions from "../../assets/questions.json";
 
 const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(null);
