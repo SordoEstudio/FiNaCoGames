@@ -1,0 +1,33 @@
+src/
+|-- assets/
+|-- |--estructura.txt
+|-- |--questions.json
+|-- components/
+|   |-- Timer.js
+|   |-- Score.js
+|-- games/
+|   |-- MatchingPairs/
+|   |   |--MatchingPairs.jsx
+|   |   |--MatchingPairs.css
+|   |-- Questions/
+|   |   |--Questions.jsx
+|   |-- Timeline/
+|   |   |--TimeLine.jsx
+|   |   |--TimeLine.css
+|-- pages/
+|   |-- HerrorPage.js
+|   |-- GamePlay.js
+|   |-- GameRules.js
+|   |-- Home.js
+|   |-- Home.css
+|   |-- Results.js
+|   |-- Test.js
+|-- |-- layouts/
+|   |   |-- Footer.js
+|   |   |-- Header.js
+|   |   |-- MainLayout.js
+|-- App.js
+|-- App.css
+|-- index.jsx
+|-- index.css
+|-- Tareas

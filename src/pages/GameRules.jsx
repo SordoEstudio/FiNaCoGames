@@ -8,7 +8,7 @@ const GameRules = () => {
 
   const gameDescriptions = {
     'timeline': 'En este juego, debes ordenar eventos históricos...',
-    'memory': 'Encuentra las parejas de cartas idénticas...',
+    'memory-pairs': 'Encuentra las parejas de cartas idénticas...',
     'matching-pairs': 'Une las parejas relacionadas correctamente...',
     'questions': 'Resuelve preguntas relacionadas con el tema...'
   };

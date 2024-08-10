@@ -19,7 +19,7 @@ const Home = () => {
       description: 'Encuentra las parejas de imágenes relacionadas con la localidad.',
       image: '/images/memory.jpg', // Ruta a la imagen
       color: '#6b5b95',
-      route: '/rules/memory-game',
+      route: '/rules/memory-pairs',
     },
     {
       title: 'Unir Parejas',
@@ -30,7 +30,7 @@ const Home = () => {
     },
     {
       title: 'Trivia',
-      description: 'C=Reponde las preguntas sobre San Vicente y suma puntos',
+      description: 'Reponde las preguntas sobre San Vicente y suma puntos',
       image: '/images/trivia.jpg', // Ruta a la imagen
       color: '#88664b',
       route: '/rules/questions',

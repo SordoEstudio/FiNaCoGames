@@ -1,0 +1,7 @@
+- Generales
+ |- Que tome la informacion de manera random
+ |- Manejo de puntaje
+ |- Mover todos los datos a Json
+- Particulares
+ |- Matching Pairs 
+ |- Ubicar de manera vertical para diferenciar de Linea de tiempo 

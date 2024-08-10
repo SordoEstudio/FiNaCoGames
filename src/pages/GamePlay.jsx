@@ -5,6 +5,8 @@ import Timer from '../components/Timer';
 import Score from '../components/Score';
 import Timeline from '../games/Timeline/TimeLine.jsx';
 import Questions from '../games/Questions/Questions.jsx';
+import MatchingPairs from '../games/MatchingPairs/MatchingPairs.jsx';
+import MemoryPairs from '../games/MemoryPairs/MemoryPairs.jsx';
 
 const GamePlay = () => {
   const { game } = useParams();
@@ -18,10 +20,10 @@ const GamePlay = () => {
         return <Timeline />;
       case 'questions':
         return <Questions />;
-      case 'memory-game':
-        return ;
+      case 'memory-pairs':
+        return <MemoryPairs />;
       case 'matching-pairs':
-        return ;
+        return <MatchingPairs />;
       // Agrega más casos para otros juegos aquí
       default:
         return <p>Juego no encontrado.</p>;
