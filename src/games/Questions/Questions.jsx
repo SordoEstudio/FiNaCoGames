@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import questions from "../../assets/questions.json";
+import SnackbarComponent from '../../components/SnackbarComponent';
 
 const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [score, setScore] = useState(0);
-  const [showNotification, setShowNotification] = useState(null);
+  const [snackbarProps, setSnackbarProps] = useState({type:null,message:"",open:false,duration:6000});
   const [timeLeft, setTimeLeft] = useState(60); // Tiempo total en segundos (por ejemplo, 60 segundos)
   const [questionsPool, setQuestionsPool] = useState([...questions]);
 
@@ -26,6 +27,7 @@ const Questions = () => {
       const randomIndex = Math.floor(Math.random() * questionsPool.length);
       setCurrentQuestion(questionsPool[randomIndex]);
       setQuestionsPool(questionsPool.filter((_, index) => index !== randomIndex));
+      setSnackbarProps({...snackbarProps,open:false})
     } else {
       setCurrentQuestion(null); // No más preguntas disponibles
     }
@@ -36,14 +38,14 @@ const Questions = () => {
 
     if (selectedOption === currentQuestion.answer) {
       setScore(score + 1);
-      setShowNotification('Correcto');
+      setSnackbarProps({type:"success",message:"Respuesta correcta!",open:true,duration:1500});
     } else {
-      setShowNotification('Incorrecto');
+      setSnackbarProps({type:"error",message:"Respuesta incorrecta",open:true,duration:1500});
     }
 
     setTimeout(() => {
-      setShowNotification(null);
       getNextQuestion();
+      
     }, 1000);
   };
 
@@ -61,7 +63,7 @@ const Questions = () => {
               ))}
             </ul>
             <div>Tiempo restante: {timeLeft} segundos</div>
-            {showNotification && <div>{showNotification}</div>}
+            <SnackbarComponent snackbarProps={snackbarProps} setSnackbarProps={setSnackbarProps}/>
           </div>
         ) : (
           <h2>No hay más preguntas disponibles. Puntuación: {score}</h2>

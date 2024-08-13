@@ -1,7 +1,25 @@
 - Generales
+
  |- Que tome la informacion de manera random
  |- Manejo de puntaje
  |- Mover todos los datos a Json
+ |- Animaciones y alertas 
+ >>> SweetAlerts https://sweetalert2.github.io/#examples
+
+
 - Particulares
- |- Matching Pairs 
+
+ - Matching Pairs 
  |- Ubicar de manera vertical para diferenciar de Linea de tiempo 
+ |- Limitar tiempo y cantidad de intentos
+
+ - Linea de tiempo
+ | - Graficar linea de tiempo (flecha o ) 
+ | - >>> (ver stepper MUI) https://mui.com/material-ui/react-stepper/
+
+- Questions
+ | - Toast en cada respuesta
+ >>> https://mui.com/material-ui/react-snackbar/
+
+
+ https://mui.com/material-ui/transitions/
