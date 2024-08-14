@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './MemoryPairs.css';
+import SnackbarComponent from '../../components/SnackbarComponent';
 
 const cardsData = [
     { id: 1, front: 'img/cardterminal.jpg', text: 'Terminal', bgColor: '#f94144' }, 
@@ -20,12 +21,13 @@ const shuffleArray = (array) => {
     return array;
 };
 
-const MemoryPairs = () => {
+const MemoryPairs = ({score,setScore}) => {
     const [cards, setCards] = useState(() => shuffleArray([...cardsData, ...cardsData]));
     const [flippedIndices, setFlippedIndices] = useState([]);
     const [matched, setMatched] = useState([]);
     const [timer, setTimer] = useState(0);
     const [startTime, setStartTime] = useState(null);
+    const [snackbarProps, setSnackbarProps] = useState({type:"",message:"",open:false,duration:1500,vertical:"bottom",horizontal:"center"});
 
     useEffect(() => {
         if (flippedIndices.length === 2) {
@@ -34,10 +36,14 @@ const MemoryPairs = () => {
 
             if (isMatch) {
                 setMatched((prev) => [...prev, cards[firstIndex].id]);
+                setScore( score + 1);
+                setSnackbarProps({...snackbarProps,type:"success",message:"Respuesta correcta",open:true,duration:1500});
+
             }
 
             setTimeout(() => {
                 setFlippedIndices([]);
+                setSnackbarProps({...snackbarProps,open:false})
             }, 1000);
         }
     }, [flippedIndices]);
@@ -76,9 +82,9 @@ const MemoryPairs = () => {
                     const isFlipped = flippedIndices.includes(index) || matched.includes(card.id);
                     return (
                         <div
-                            key={index}
-                            className={`card ${isFlipped ? 'flip' : ''}`}
-                            onClick={() => handleCardClick(index)}
+                        key={index}
+                        className={`card ${isFlipped ? 'flip' : ''}`}
+                        onClick={() => handleCardClick(index)}
                         >
                             <div className="front" style={{ backgroundColor: card.bgColor }}>
                                 <img src={card.front} alt={card.text} className="card-image" />
@@ -89,6 +95,7 @@ const MemoryPairs = () => {
                     );
                 })}
             </div>
+                <SnackbarComponent snackbarProps={snackbarProps} setSnackbarProps={setSnackbarProps}/>
             {allMatched && (
                 <div className="modal">
                     <h2>¡Felicidades!</h2>

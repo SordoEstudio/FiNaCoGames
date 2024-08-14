@@ -17,13 +17,13 @@ const GamePlay = () => {
   const renderGame = () => {
     switch (game) {
       case 'timeline':
-        return <Timeline />;
+        return <Timeline score={score} setScore={setScore}/>;
       case 'questions':
-        return <Questions />;
+        return <Questions score={score} setScore={setScore}/>;
       case 'memory-pairs':
-        return <MemoryPairs />;
+        return <MemoryPairs score={score} setScore={setScore}/>;
       case 'matching-pairs':
-        return <MatchingPairs />;
+        return <MatchingPairs score={score} setScore={setScore}/>;
       // Agrega más casos para otros juegos aquí
       default:
         return <p>Juego no encontrado.</p>;

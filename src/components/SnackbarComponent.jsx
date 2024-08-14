@@ -4,15 +4,16 @@ import Snackbar from '@mui/material/Snackbar';
 
 
 export default function SnackbarComponent({snackbarProps, setsnackbarProps}) {
-const {type,message,open,duration} = snackbarProps
+const {type,message,open,duration,vertical,horizontal} = snackbarProps
 
   const handleClose= ()=> {
     setsnackbarProps({...snackbarProps,open:false});
   };
-
   return (
     <div>
-      <Snackbar open={open} autoHideDuration={duration} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={duration} onClose={handleClose}  
+      anchorOrigin={{ vertical:`${vertical}`, horizontal:`${horizontal}` }}
+      >
         <Alert
           severity={type}
           variant="filled"
