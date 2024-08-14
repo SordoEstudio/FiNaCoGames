@@ -20,7 +20,8 @@ const GameRules = () => {
 
       <p>{gameDescriptions[game]}</p>
       <button onClick={() => navigate(`/play/${game}`)}>Comenzar</button>
-    </div>
+      <button onClick={() => navigate(-1)}>Volver</button>
+      </div>
   );
 };
 

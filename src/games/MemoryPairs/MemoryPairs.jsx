@@ -73,10 +73,7 @@ const MemoryPairs = ({score,setScore}) => {
 
     return (
         <div className="game-container">
-            <div className="header">
-                <button onClick={() => window.location.href = '/'}>Volver al inicio</button>
-                <div id="timer">{Math.floor(timer / 60).toString().padStart(2, '0')}:{(timer % 60).toString().padStart(2, '0')}</div>
-            </div>
+
             <div id="gameBoard" className="game-board">
                 {cards.map((card, index) => {
                     const isFlipped = flippedIndices.includes(index) || matched.includes(card.id);

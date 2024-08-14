@@ -12,14 +12,22 @@
  - Matching Pairs 
  |- Ubicar de manera vertical para diferenciar de Linea de tiempo 
  |- Limitar tiempo y cantidad de intentos
+ |- Manejo de puntaje por tiempo
 
  - Linea de tiempo
  | - Graficar linea de tiempo (flecha o ) 
  | - >>> (ver stepper MUI) https://mui.com/material-ui/react-stepper/
+ | - >>> (ver timeline MUI) https://mui.com/material-ui/react-timeline/
+  |- Limitar tiempo y cantidad de intentos
+ |- Manejo de puntaje por tiempo
 
-- Questions
- | - Toast en cada respuesta
- >>> https://mui.com/material-ui/react-snackbar/
 
-
+VER COMO LUJINHO CUANDO ESTE TODO OK METER TRANSICIONES 
  https://mui.com/material-ui/transitions/
+
+! IDEAS 
+Mezclar preguntas de interesa general 
+
+En la pagina de resultado invitar a hacer una foto y etiquetar al monicipio y participar por premios?
+Presentar como un certificado diploma?
+enviar por mail? hacer ranking ? registro con qr?
