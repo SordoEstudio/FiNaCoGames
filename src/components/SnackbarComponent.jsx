@@ -3,11 +3,11 @@ import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 
 
-export default function SnackbarComponent({snackbarProps, setsnackbarProps}) {
+export default function SnackbarComponent({snackbarProps, setSnackbarProps}) {
 const {type,message,open,duration,vertical,horizontal} = snackbarProps
 
   const handleClose= ()=> {
-    setsnackbarProps({...snackbarProps,open:false});
+    setSnackbarProps({...snackbarProps,open:false});
   };
   return (
     <div>

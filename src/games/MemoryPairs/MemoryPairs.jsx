@@ -21,12 +21,10 @@ const shuffleArray = (array) => {
     return array;
 };
 
-const MemoryPairs = ({score,setScore}) => {
+const MemoryPairs = ({score,setScore,endGame}) => {
     const [cards, setCards] = useState(() => shuffleArray([...cardsData, ...cardsData]));
     const [flippedIndices, setFlippedIndices] = useState([]);
     const [matched, setMatched] = useState([]);
-    const [timer, setTimer] = useState(0);
-    const [startTime, setStartTime] = useState(null);
     const [snackbarProps, setSnackbarProps] = useState({type:"",message:"",open:false,duration:1500,vertical:"bottom",horizontal:"center"});
 
     useEffect(() => {
@@ -48,29 +46,23 @@ const MemoryPairs = ({score,setScore}) => {
         }
     }, [flippedIndices]);
 
-    useEffect(() => {
-        if (startTime) {
-            const interval = setInterval(() => {
-                setTimer(Math.floor((Date.now() - startTime) / 1000));
-            }, 1000);
-            return () => clearInterval(interval);
-        }
-    }, [startTime]);
+
 
     const handleCardClick = (index) => {
         if (flippedIndices.length === 2 || flippedIndices.includes(index) || matched.includes(cards[index].id)) {
             return;
         }
 
-        if (!startTime) {
-            setStartTime(Date.now());
-        }
-
         setFlippedIndices((prev) => [...prev, index]);
     };
 
-    const allMatched = cards.every(card => matched.includes(card.id));
-
+    const isGameComplete = cards.every(card => matched.includes(card.id));
+    useEffect(() => {
+      if (isGameComplete)
+        return endGame()
+      else
+        return 
+      }, [isGameComplete])
     return (
         <div className="game-container">
 
@@ -93,13 +85,7 @@ const MemoryPairs = ({score,setScore}) => {
                 })}
             </div>
                 <SnackbarComponent snackbarProps={snackbarProps} setSnackbarProps={setSnackbarProps}/>
-            {allMatched && (
-                <div className="modal">
-                    <h2>¡Felicidades!</h2>
-                    <p>Has completado el juego en {Math.floor(timer / 60).toString().padStart(2, '0')}:{(timer % 60).toString().padStart(2, '0')}</p>
-                    <button onClick={() => window.location.href = '/'}>Volver al inicio</button>
-                </div>
-            )}
+
         </div>
     );
 };

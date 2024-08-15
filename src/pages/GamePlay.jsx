@@ -1,5 +1,5 @@
 // src/pages/GamePlay.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Timer from '../components/Timer';
 import Score from '../components/Score';
@@ -12,6 +12,7 @@ const GamePlay = () => {
   const { game } = useParams();
   const navigate = useNavigate();
   const [score, setScore] = useState(0);
+  const [timer, setTimer] = useState(0);
 
   // Función para renderizar el juego correspondiente
   const renderGame = () => {
@@ -21,9 +22,9 @@ const GamePlay = () => {
       case 'questions':
         return <Questions score={score} setScore={setScore}/>;
       case 'memory-pairs':
-        return <MemoryPairs score={score} setScore={setScore}/>;
+        return <MemoryPairs endGame={endGame} score={score} setScore={setScore}timer={timer} setTimer={setTimer}/>;
       case 'matching-pairs':
-        return <MatchingPairs score={score} setScore={setScore}/>;
+        return <MatchingPairs score={score} setScore={setScore}endGame={endGame}/>;
       // Agrega más casos para otros juegos aquí
       default:
         return <p>Juego no encontrado.</p>;
@@ -32,7 +33,7 @@ const GamePlay = () => {
   // Lógica del juego y actualizaciones de puntaje...
 
   const endGame = () => {
-    navigate(`/results/${game}`, { state: { score, time: '00:10:00' } });
+    navigate(`/results/${game}`, { state: { score: score, time: timer } });
   };
 
   return (
