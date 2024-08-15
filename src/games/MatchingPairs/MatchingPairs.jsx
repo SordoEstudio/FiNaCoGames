@@ -1,54 +1,95 @@
-import React, { useState } from 'react';
-import './MatchingPairs.css'; // Agrega un archivo CSS para los estilos
+import React, { useEffect, useState } from "react";
+import "./MatchingPairs.css"
+import SnackbarComponent from "../../components/SnackbarComponent";
 
-const MatchingPairs = () => {
-  const [events, setEvents] = useState([
-    { id: 1, name: 'Fundación de la Ciudad', year: 1850 },
-    { id: 2, name: 'Construcción del Puente Histórico', year: 1900 },
-    { id: 3, name: 'Inauguración del Museo Local', year: 1950 },
-    { id: 4, name: 'Celebración del Centenario', year: 2000 },
+export default function PairMatchGame({score,setScore,endGame}) {
+  const [selections, setSelections] = useState([]);
+  const [snackbarProps, setSnackbarProps] = useState({type:"",message:"",open:false,duration:1500,vertical:"bottom",horizontal:"center"});
+
+  const [pairs, setPairs] = useState([
+    { id: 1, group: "A", content: "A1", matchId: 5, selected: false },
+    { id: 2, group: "A", content: "A2", matchId: 6, selected: false },
+    { id: 3, group: "A", content: "A3", matchId: 7, selected: false },
+    { id: 4, group: "A", content: "A4", matchId: 8, selected: false },
+    { id: 5, group: "B", content: "B1", matchId: 1, selected: false },
+    { id: 6, group: "B", content: "B2", matchId: 2, selected: false },
+    { id: 7, group: "B", content: "B3", matchId: 3, selected: false },
+    { id: 8, group: "B", content: "B4", matchId: 4, selected: false },
   ]);
 
-  const [timeline, setTimeline] = useState(Array(events.length).fill(null));
+  const [message, setMessage] = useState("");
+  const [highlighted, setHighlighted] = useState(null); // Nuevo estado para destacar la primera carta seleccionada
 
-  const handleDrop = (eventId, index) => {
-    const newTimeline = [...timeline];
-    newTimeline[index] = events.find(event => event.id === eventId);
-    setTimeline(newTimeline);
+  const handleSelection = (id, group) => {
+    const selectedPair = pairs.find((pair) => pair.id === id);
+
+    // Si ya está seleccionada, no hacer nada
+    if (selectedPair.selected) return;
+
+    // Si ya hay una selección previa
+    if (selections.length === 1) {
+      const [prevSelection] = selections;
+      const prevPair = pairs.find((pair) => pair.id === prevSelection.id);
+
+      // Comprobar si el par es correcto
+      if (prevPair.matchId === id) {
+        setSnackbarProps({...snackbarProps,type:"success",message:"Correcto!",open:true});
+        setScore(score +1)
+        setPairs((prevPairs) =>
+          prevPairs.map((pair) =>
+            pair.id === id || pair.id === prevPair.id
+              ? { ...pair, selected: true }
+              : pair
+          )
+        );
+        setHighlighted(null); // Limpiar resaltado
+      } else {
+        setSnackbarProps({...snackbarProps,type:"error",message:"Incorrecto",open:true});
+        setSelections([]); // Reiniciar selección en caso de error
+        setHighlighted(null); // Limpiar resaltado
+        return;
+      }
+      setSelections([]); // Reiniciar las selecciones para un nuevo par
+    } else {
+      setSelections([{ id, group }]);
+      setHighlighted(id); // Resaltar la carta seleccionada
+      setMessage(""); // Limpiar mensaje
+    }
   };
 
+  const isGameComplete = pairs.every((pair) => pair.selected);
+  useEffect(() => {
+    if (isGameComplete)
+      return endGame()
+    else
+      return 
+    }, [isGameComplete])
   return (
-    <div className="timeline-game">
-      <h2>Línea de Tiempo</h2>
-      <div className="events">
-        {events.map(event => (
+    <div className="pair-match-game">
+      <div className="group-a">
+        {pairs.filter(pair => pair.group === 'A').map(pair => (
           <div
-            key={event.id}
-            className="event"
-            draggable
-            onDragStart={(e) => e.dataTransfer.setData('eventId', event.id)}
+            key={pair.id}
+            className={`pair-item ${pair.selected ? "selected" : ""} ${highlighted === pair.id ? "highlighted" : ""}`}
+            onClick={() => handleSelection(pair.id, 'A')}
           >
-            {event.name}
+            {pair.content}
           </div>
         ))}
       </div>
-      <div className="timeline">
-        {timeline.map((event, index) => (
+      <div className="message">{message}</div>
+      <SnackbarComponent snackbarProps={snackbarProps} setSnackbarProps={setSnackbarProps} />
+      <div className="group-b">
+        {pairs.filter(pair => pair.group === 'B').map(pair => (
           <div
-            key={index}
-            className="timeline-slot"
-            onDrop={(e) => {
-              const eventId = parseInt(e.dataTransfer.getData('eventId'), 10);
-              handleDrop(eventId, index);
-            }}
-            onDragOver={(e) => e.preventDefault()}
+            key={pair.id}
+            className={`pair-item ${pair.selected ? "selected" : ""} ${highlighted === pair.id ? "highlighted" : ""}`}
+            onClick={() => handleSelection(pair.id, 'B')}
           >
-            {event ? event.name : 'Suelta aquí'}
+            {pair.content}
           </div>
         ))}
       </div>
     </div>
   );
-};
-
-export default MatchingPairs;
+}

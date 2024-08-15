@@ -9,6 +9,10 @@
 
 - Particulares
 
+ - Memory Pairs 
+ |- Manejo de tiempo global para puntaje
+
+
  - Matching Pairs 
  |- Ubicar de manera vertical para diferenciar de Linea de tiempo 
  |- Limitar tiempo y cantidad de intentos
@@ -24,6 +28,8 @@
 
 VER COMO LUJINHO CUANDO ESTE TODO OK METER TRANSICIONES 
  https://mui.com/material-ui/transitions/
+
+Integrar Sonidos!!!???
 
 ! IDEAS 
 Mezclar preguntas de interesa general 
