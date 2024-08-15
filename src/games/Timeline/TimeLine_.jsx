@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './MatchingPairs.css'; // Agrega un archivo CSS para los estilos
+import './TimeLine.css'; // Agrega un archivo CSS para los estilos
 
-const MatchingPairs = () => {
+const TimeLine = () => {
   const [events, setEvents] = useState([
     { id: 1, name: 'Fundación de la Ciudad', year: 1850 },
     { id: 2, name: 'Construcción del Puente Histórico', year: 1900 },
@@ -51,4 +51,4 @@ const MatchingPairs = () => {
   );
 };
 
-export default MatchingPairs;
+export default TimeLine;

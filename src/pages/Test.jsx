@@ -1,7 +1,7 @@
 import React from 'react'
 import Questions from '../games/Questions/Questions'
-import Timeline from '../games/Timeline/TimeLine'
-import TimeLineMUI from '../games/Timeline/TimelineMUI'
+import Timeline from '../games/Timeline/TimeLine_'
+import TimeLineMUI from '../games/Timeline/TimeLine'
 
 const Test = () => {
   return (<>
