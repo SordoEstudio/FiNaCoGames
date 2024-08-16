@@ -4,7 +4,7 @@
   padding: 20px;
 }
 
-ul {
+/* ul {
   list-style-type: none;
   padding: 0;
 }
@@ -19,7 +19,7 @@ li {
 
 li:hover {
   background-color: #d0d0d0;
-}
+} */
 
 .notification {
   margin-top: 20px;

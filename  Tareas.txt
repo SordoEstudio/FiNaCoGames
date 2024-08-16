@@ -1,13 +1,12 @@
-- Generales
-
+--------- GENERALES -------------
+ |- Crear modelo de json para cada juego
  |- Que tome la informacion de manera random
  |- Manejo de puntaje
  |- Mover todos los datos a Json
  |- Animaciones y alertas 
- >>> SweetAlerts https://sweetalert2.github.io/#examples
 
 
-- Particulares
+----------- PARTICULARES ---------
 
  - Memory Pairs 
  |- Manejo de tiempo global para puntaje
@@ -15,16 +14,15 @@
 
  - Matching Pairs 
  |- Ubicar de manera vertical para diferenciar de Linea de tiempo 
- |- Limitar tiempo y cantidad de intentos
  |- Manejo de puntaje por tiempo
 
  - Linea de tiempo
  | - Graficar linea de tiempo (flecha o ) 
- | - >>> (ver stepper MUI) https://mui.com/material-ui/react-stepper/
- | - >>> (ver timeline MUI) https://mui.com/material-ui/react-timeline/
-  |- Limitar tiempo y cantidad de intentos
+ |- Limitar tiempo
  |- Manejo de puntaje por tiempo
 
+
+------------- MEJORAS ---------------
 
 VER COMO LUJINHO CUANDO ESTE TODO OK METER TRANSICIONES 
  https://mui.com/material-ui/transitions/

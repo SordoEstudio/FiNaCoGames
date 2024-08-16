@@ -7,6 +7,7 @@ import Timeline from '../games/Timeline/TimeLine.jsx';
 import Questions from '../games/Questions/Questions.jsx';
 import MatchingPairs from '../games/MatchingPairs/MatchingPairs.jsx';
 import MemoryPairs from '../games/MemoryPairs/MemoryPairs.jsx';
+import TimeLineMUI from '../games/Timeline/TimelineMUI.jsx';
 
 const GamePlay = () => {
   const { game } = useParams();
@@ -18,7 +19,7 @@ const GamePlay = () => {
   const renderGame = () => {
     switch (game) {
       case 'timeline':
-        return <Timeline score={score} setScore={setScore}/>;
+        return <TimeLineMUI score={score} setScore={setScore} endGame={endGame}/>;
       case 'questions':
         return <Questions score={score} setScore={setScore}/>;
       case 'memory-pairs':

@@ -1,0 +1,28 @@
+TimeLineMUI: { id , evento , año }
+[
+    { id: 1, name: "Fundación de la Ciudad", year: 1850 },
+]
+
+ ---------------------------------------------------------------------------------------------------------
+
+MatchingPairs: { id, grupo(a/b) , contenido ,id conincidente , selected(false) }
+[
+    { id: 1, group: "A", content: "A1", matchId: 5, selected: false },
+    { id: 5, group: "B", content: "B1", matchId: 1, selected: false },
+  ];
+
+ ---------------------------------------------------------------------------------------------------------
+
+MemoriPairs: { id , imagen , texto , color }
+[
+    { id: 1, front: 'img/cardterminal.jpg', text: 'Terminal', bgColor: '#f94144' }, 
+];
+
+ ---------------------------------------------------------------------------------------------------------
+
+ Questions: { pregunta , array:[opciones] , respuesta}
+{
+    "question": "¿Cuál es el planeta más grande del sistema solar?",
+    "options": ["Marte", "Venus", "Júpiter", "Saturno"],
+    "answer": "Júpiter"
+}
