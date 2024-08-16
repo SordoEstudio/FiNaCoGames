@@ -1,25 +1,43 @@
-/* src/components/LineaDeTiempo.css */
+/* CSS Reset para el componente */
+.timeline-game, .timeline, .events, .event, .timeline-slot, .timeline-item {
+  all: unset;
+  box-sizing: border-box;
+  display: revert;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: normal;
+  text-align: inherit;
+}
+/* CONTENEDOR GENERAL */
 .timeline-game {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start; /* Alinear al principio verticalmente */
+  justify-content: space-between;
   height: 100%;
+  width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
 
+/* CONTENEDOR DE EVENTOS */
 .events {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  flex-direction: column;
   margin-bottom: 40px;
-  width: 100%;
+  width: 48%;
+  margin-left: auto; /* Mover al margen derecho */
 }
 
 .event {
   background-color: #007bff;
   color: white;
   padding: 10px 20px;
+  margin: 10px 0; /* Añadir margen en la parte superior e inferior */
   border-radius: 5px;
   cursor: grab;
   user-select: none;
@@ -29,10 +47,13 @@
   cursor: grabbing;
 }
 
+/* CONTENEDOR DE LINEA DE TIEMPO */
 .timeline {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 48%;
+  margin-right: auto; /* Mover al margen izquierdo */
 }
 
 .timeline-slot {
@@ -43,6 +64,7 @@
   text-align: center;
   min-width: 150px;
   transition: background-color 0.3s ease;
+  margin-bottom: 10px; /* Añadir margen inferior */
 }
 
 .timeline-slot:hover {
