@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import questions from "../../assets/questions.json";
+import questions from "../../assets/json/questions.json";
+import './questions.css'
 import SnackbarComponent from '../../components/SnackbarComponent';
 
 const Questions = ({score,setScore}) => {

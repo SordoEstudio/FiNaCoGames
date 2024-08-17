@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Timer from '../components/Timer';
 import Score from '../components/Score';
-import Timeline from '../games/Timeline/TimeLine.jsx';
 import Questions from '../games/Questions/Questions.jsx';
 import MatchingPairs from '../games/MatchingPairs/MatchingPairs.jsx';
 import MemoryPairs from '../games/MemoryPairs/MemoryPairs.jsx';

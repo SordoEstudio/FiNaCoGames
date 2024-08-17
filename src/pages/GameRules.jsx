@@ -1,17 +1,12 @@
 // src/pages/GameRules.js
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-
+import gameDescriptions from '../assets/Json/GamesDescriptions.json'
 const GameRules = () => {
   const { game } = useParams();
   const navigate = useNavigate();
 
-  const gameDescriptions = {
-    'timeline': 'En este juego, debes ordenar eventos históricos...',
-    'memory-pairs': 'Encuentra las parejas de cartas idénticas...',
-    'matching-pairs': 'Une las parejas relacionadas correctamente...',
-    'questions': 'Resuelve preguntas relacionadas con el tema...'
-  };
+
 
   return (
     <div>

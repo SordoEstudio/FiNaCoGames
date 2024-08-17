@@ -1,0 +1,10 @@
+[
+    { "id": 3, "group": "A", "content": "A3", "matchId": 7, "selected": false },
+    { "id": 2, "group": "A", "content": "A2", "matchId": 6, "selected": false },
+    { "id": 4, "group": "A", "content": "A4", "matchId": 8, "selected": false },
+    { "id": 1, "group": "A", "content": "A1", "matchId": 5, "selected": false },
+    { "id": 6, "group": "B", "content": "B2", "matchId": 2, "selected": false },
+    { "id": 7, "group": "B", "content": "B3", "matchId": 3, "selected": false },
+    { "id": 5, "group": "B", "content": "B1", "matchId": 1, "selected": false },
+    { "id": 8, "group": "B", "content": "B4", "matchId": 4, "selected": false }
+]

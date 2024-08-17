@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "Fundación de la Ciudad", "year": 1850 },
+    { "id": 2, "name": "Construcción del Puente Histórico", "year": 1900 },
+    { "id": 3, "name": "Inauguración del Museo Local", "year": 1950 },
+    { "id": 4, "name": "Celebración del Centenario", "year": 2000 }
+]

@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./MatchingPairs.css"
 import SnackbarComponent from "../../components/SnackbarComponent";
-
+import matchingPAirsData  from '../../assets/Json/matchingPairs.json'
 export default function PairMatchGame({score,setScore,endGame}) {
   const [selections, setSelections] = useState([]);
   const [snackbarProps, setSnackbarProps] = useState({type:"",message:"",open:false,duration:1500,vertical:"bottom",horizontal:"center"});
 
-  const [pairs, setPairs] = useState([
-    { id: 1, group: "A", content: "A1", matchId: 5, selected: false },
-    { id: 2, group: "A", content: "A2", matchId: 6, selected: false },
-    { id: 3, group: "A", content: "A3", matchId: 7, selected: false },
-    { id: 4, group: "A", content: "A4", matchId: 8, selected: false },
-    { id: 5, group: "B", content: "B1", matchId: 1, selected: false },
-    { id: 6, group: "B", content: "B2", matchId: 2, selected: false },
-    { id: 7, group: "B", content: "B3", matchId: 3, selected: false },
-    { id: 8, group: "B", content: "B4", matchId: 4, selected: false },
-  ]);
+  const [pairs, setPairs] = useState(matchingPAirsData);
 
   const [message, setMessage] = useState("");
   const [highlighted, setHighlighted] = useState(null); // Nuevo estado para destacar la primera carta seleccionada

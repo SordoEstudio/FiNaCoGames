@@ -1,10 +1,10 @@
 --------- GENERALES -------------
- |- Crear modelo de json para cada juego
  |- Que tome la informacion de manera random
  |- Manejo de puntaje
  |- Mover todos los datos a Json
- |- Animaciones y alertas 
-
+ |- Animaciones de fin de juego antes de Results 
+ |- >> sweet alert? https://sweetalert2.github.io/
+ |- Explicacion y reglas del juego (GameDescription.Json)
 
 ----------- PARTICULARES ---------
 

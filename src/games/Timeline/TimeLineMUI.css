@@ -1,44 +1,38 @@
-/* TimeLineMUI.css */
+
 
 .timeline-game {
-    display: grid;
-    grid-template-columns: 50% 50%;
-  }
-  
-  .events {
-    width: 30%;
-    padding: 10px;
-    justify-content:left;
-    flex-direction: column;
-  }
-  
-  .event {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f0f0f0;
-    cursor: grab;
-  }
-  
-  .event.isPlaced {
-    background-color: #d3d3d3; /* Gray out if placed */
-    cursor: not-allowed;
-    text-decoration: line-through;
-  }
-  
-  .timeline-slot {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px dashed #ccc;
-    transition: background-color 0.3s;
-  }
-  
-  .timeline-slot.correct {
-    background-color: green;
-  }
-  
-  .timeline-slot.incorrect {
-    background-color: red;
-  }
-  
+display: flex;
+}
+
+.events {
+  padding: 10px;
+}
+.event {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f0f0f0;
+  cursor: grab;
+}
+
+.event.isPlaced {
+  background-color: green; 
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.timeline-slot {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #ccc;
+  transition: background-color 0.3s;
+}
+
+.timeline-slot.correct {
+  background-color: green;
+}
+
+.timeline-slot.incorrect {
+  background-color: red;
+}

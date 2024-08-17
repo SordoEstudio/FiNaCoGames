@@ -2,16 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './MemoryPairs.css';
 import SnackbarComponent from '../../components/SnackbarComponent';
 
-const cardsData = [
-    { id: 1, front: 'img/cardterminal.jpg', text: 'Terminal', bgColor: '#f94144' }, 
-    { id: 2, front: 'img/cardterminal.png', text: 'Texto 2', bgColor: '#f3722c' },
-    { id: 3, front: 'img/cardterminal.png', text: 'Texto 3', bgColor: '#f8961e' },
-    { id: 4, front: 'img/cardterminal.png', text: 'Texto 4', bgColor: '#f9844a' },
-    { id: 5, front: 'img/cardterminal.png', text: 'Texto 5', bgColor: '#f9c74f' },
-    { id: 6, front: 'img/cardterminal.png', text: 'Texto 6', bgColor: '#90be6d' },
-    { id: 7, front: 'img/cardterminal.png', text: 'Texto 7', bgColor: '#43aa8b' },
-    { id: 8, front: 'img/cardterminal.png', text: 'Texto 8', bgColor: '#577590' }
-];
+import cardsData from '../../assets/Json/memoryPairs.json'
 
 const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
